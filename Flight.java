@@ -1,30 +1,32 @@
 import java.util.Date;
+import java.util.GregorianCalendar;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Formatter;
 public class Flight{
 
     private int id;
     private String company;
+    // Creat date 
+    Date departureTime = new Date();
+    // Create time
+    SimpleDateFormat sdf = new SimpleDateFormat("yyyy MMM dd HH:mm:ss");
 
-    // Instantiate a Date object
-    private Date date = new Date();
-    // display formatted date
-    //System.out.printf("%s %tB %<te, %<tY", "Due date:", date);
+    private Calendar calendar = new GregorianCalendar(2013,1,28,13,24,56);
+     
 
-    // creat duration
-    private Formatter duration = new Formatter();
-    private Calendar cal = Calendar.getInstance();
-    duration = new Formatter();
-    // display time only
-    duration.format("%tl:%tM", cal, cal);
-
+    public Flight(int id, String nameCompany, Date departTime, Calendar calendarTime ){
+        this.id = id;
+        this.company = nameCompany;
+        this.departureTime= departTime;
+        this.calendar = calendarTime;
+    }
     // class get the Id
     public int getId(){
         return this.id;
     }
-    // class to get the Arrival Time
-    public getArrivalTime(){
-        return ("%s %tB %<te, %<tY", "Due date:", this.date);
+    // class set the Date
+    public void setDepartTime(Date DepartTime) {
+        this.departureTime = DepartTime;
     }
     // class to cancel the reservation
     public void cancel()
@@ -32,8 +34,8 @@ public class Flight{
         System.out.println("Your reservation is canceled");
     }
 
-    /*public static void main(String [] args)
-    {
-
-    }*/
+    public Date getArrivalTime() {
+        return this.departureTime;
+        // em khong biet  time depart + Duration 
+    }
 }

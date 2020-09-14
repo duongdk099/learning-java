@@ -16,11 +16,11 @@ public class Personal extends Person {
 		{
 			return true;
 		}
-		else return false;
+		return false;
 	}
 	
 	public String getPseudo() {
-		return pseudo;
+		return this.pseudo;
 	}
 	
 	public void isPasswordCorrect(String p)

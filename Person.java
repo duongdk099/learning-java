@@ -1,16 +1,15 @@
-
 public class Person {
 	private String name;
 	private int age;
 	private String adress;
-	
-	public Person(String n, int a, String adresse)
+
+	public Person(String name, int age, String address)
 	{
-		name =n;
-		age = a;
-		adress= adresse;
+		this.name = name;
+		this.age = age;
+		this.adress = address;
 	}
-	
+
 	public String getName() {
 		return name;
 	}
@@ -30,5 +29,3 @@ public class Person {
 		System.out.println(p1.adress);
 	}
 }
-
-
