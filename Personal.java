@@ -10,7 +10,7 @@ public class Personal extends Person {
 	private String pseudo;
 	private String password;
 	private int right;
-	private Flight fl; 
+	private Flight flight; 
 	// Personal create Flight
 	public void createFlight(Flight newFlight) {
 		if (newFlight != null) {
@@ -19,9 +19,7 @@ public class Personal extends Person {
 	}
 	public boolean hasRight(int r)
 	{
-		if (r == this.right)
-		return true;
-		return false;
+		return r== this.right;
 	}
 	
 	public String getPseudo() {
@@ -30,16 +28,14 @@ public class Personal extends Person {
 	
 	public boolean isPasswordCorrect(String p)
 	{
-		if(p == this.password)
-		return true;
-		return false;
+		return p == this.password;
 	}
 	// get Flight
 	public Flight getFl() {
-		return fl;
+		return flight;
 	}
 	// set Flight
-	public void setFl(Flight fl) {
-		this.fl = fl;
+	public void setFl(Flight flight) {
+		this.flight = flight;
 	}
 }

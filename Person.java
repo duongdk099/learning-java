@@ -17,15 +17,6 @@ public class Person {
 		return age;
 	}
 	public boolean isOlder() {
-		if(this.age >65 )
-		{
-			return true;
-		}
-		return false;
-	}
-	public static void main (String [] args)
-	{
-		Person p1= new Person("John",50,"3 Camille Mathis");
-		System.out.println(p1.adress);
+		return this.age>65;
 	}
 }

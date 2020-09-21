@@ -11,6 +11,7 @@ public class Customer extends Person {
 	private List<String> bookings;
 	// Customer can book from booking
 	private Booking bk;
+	// still sai
 	public void book(Booking cusBooking) {
 		if(cusBooking != null)
 		{
@@ -33,7 +34,8 @@ public class Customer extends Person {
 	}
 
 	private boolean isMaxBooking() {
-		return ((CharSequence) this.bookings).length() >= 5;
+		
+		return this.bookings.size() >= 5;
 	}
 
 	public boolean addBooking(String booking) {
