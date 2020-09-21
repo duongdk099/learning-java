@@ -23,9 +23,4 @@ public class Person {
 		}
 		return false;
 	}
-	public static void main (String [] args)
-	{
-		Person p1= new Person("John",50,"3 Camille Mathis");
-		System.out.println(p1.adress);
-	}
 }
