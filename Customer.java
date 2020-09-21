@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 public class Customer extends Person {
 
@@ -6,8 +8,16 @@ public class Customer extends Person {
 	private int id;
 	private String mail;
 	private String password;
-	private ArrayList<String> bookings = new ArrayList<String>();
-
+	private List<String> bookings;
+	// Customer can book from booking
+	private Booking bk;
+	public void book(Booking cusBooking) {
+		if(cusBooking != null)
+		{
+			this.bk = cusBooking;
+		}
+	}
+	
 	public Customer( String name,  int age,  String address) {
 		super(name, age, addresse);
 		this.bookings = new ArrayList<String>();
@@ -15,7 +25,7 @@ public class Customer extends Person {
 
 	public Customer() {
 		super("admin", 100, "admin");
-		this.bookings = new ArrayList<String>();
+		this.bookings = new LinkedList<String>();
 	}
 
 	public String getMail() {
@@ -26,21 +36,20 @@ public class Customer extends Person {
 		return ((CharSequence) this.bookings).length() >= 5;
 	}
 
-	public void addBooking(String booking) {
+	public boolean addBooking(String booking) {
 		if(!this.isMaxBooking()) {
 			this.bookings.add(booking);
-			System.out.println("Bravo!!!"); //success
+			return true; //success
 		}
-		System.out.println("Again, plz");;
+		return false;
 	}
 
-	public void isPasswordCorrect(String p) {
+	public boolean isPasswordCorrect(String p) {
 		if (this.password == p)
-		{
-			System.out.print("Bravo !!!");
-		}
-		else {
-			System.out.print("Sorry");
-		}
+			return true;
+			return false;
 	}
+
+	//set Flight
+	
 }

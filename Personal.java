@@ -5,17 +5,22 @@ public class Personal extends Person {
 		super(n, a, adresse);
 		// TODO Auto-generated constructor stub
 	}
+
 	private int id;
 	private String pseudo;
 	private String password;
 	private int right;
-	
+	private Flight fl; 
+	// Personal create Flight
+	public void createFlight(Flight newFlight) {
+		if (newFlight != null) {
+			this.setFl(newFlight);
+		}
+	}
 	public boolean hasRight(int r)
 	{
 		if (r == this.right)
-		{
-			return true;
-		}
+		return true;
 		return false;
 	}
 	
@@ -23,13 +28,18 @@ public class Personal extends Person {
 		return this.pseudo;
 	}
 	
-	public void isPasswordCorrect(String p)
+	public boolean isPasswordCorrect(String p)
 	{
 		if(p == this.password)
-		{
-			System.out.print("Bravo!!");
-		}
-		else 	System.out.print("Sorry :(((");
-
+		return true;
+		return false;
+	}
+	// get Flight
+	public Flight getFl() {
+		return fl;
+	}
+	// set Flight
+	public void setFl(Flight fl) {
+		this.fl = fl;
 	}
 }

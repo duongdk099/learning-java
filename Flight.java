@@ -1,41 +1,38 @@
-import java.util.Date;
-import java.util.GregorianCalendar;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
 public class Flight{
 
     private int id;
     private String company;
-    // Creat date 
-    Date departureTime = new Date();
-    // Create time
-    SimpleDateFormat sdf = new SimpleDateFormat("yyyy MMM dd HH:mm:ss");
-
-    private Calendar calendar = new GregorianCalendar(2013,1,28,13,24,56);
+    // Create the full date for the flight
+    Calendar flightTime = Calendar.getInstance();
+    //flightTime.set(2020, 02, 30, 12, 30, 30);
      
-
-    public Flight(int id, String nameCompany, Date departTime, Calendar calendarTime ){
+    // Constructor the class Flight
+    public Flight(int id, String nameCompany, Calendar dateFlightCalendar ){
         this.id = id;
         this.company = nameCompany;
-        this.departureTime= departTime;
-        this.calendar = calendarTime;
+        this.flightTime= dateFlightCalendar;
     }
-    // class get the Id
+
+    // Get the Id
     public int getId(){
         return this.id;
     }
-    // class set the Date
-    public void setDepartTime(Date DepartTime) {
-        this.departureTime = DepartTime;
-    }
-    // class to cancel the reservation
+
+    // Set the Date
+    public Calendar setDateCalendar( Calendar a ){
+        return this.flightTime = a;
+    }    
+
+    // Cancel the reservation
     public void cancel()
     {
         System.out.println("Your reservation is canceled");
     }
 
-    public Date getArrivalTime() {
-        return this.departureTime;
-        // em khong biet  time depart + Duration 
+    // get arrival time
+    public Calendar getArrival(){
+        return this.flightTime;
+        // em chua tim duoc cach cong a
     }
 }
