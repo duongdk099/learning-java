@@ -1,3 +1,5 @@
+package company;
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -9,7 +11,7 @@ public class Customer extends Person {
 	private String password;
 	private List<String> bookings;
 
-	// Customer can book from booking
+	// company.Customer can book from booking
 	private Booking bk;
 
 	// still sai

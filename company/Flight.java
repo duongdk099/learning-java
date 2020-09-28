@@ -1,6 +1,7 @@
+package company;
+
 import java.time.Duration;
 import java.time.LocalDateTime;
-import java.time.Period;
 import java.time.temporal.TemporalAmount;
 
 public class Flight{
@@ -15,7 +16,7 @@ public class Flight{
 
     private LocalDateTime departureTime;
      
-    // Constructor the class Flight
+    // Constructor the class company.Flight
     public Flight(int id, String nameCompany, LocalDateTime departureTime, TemporalAmount duration){
         this.id = id;
         this.company = nameCompany;

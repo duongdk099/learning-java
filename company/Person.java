@@ -1,7 +1,9 @@
+package company;
+
 public abstract class Person {
 
 	/**
-	* class Person: model a person
+	* class company.Person: model a person
 	*/
 
 	private int id;
@@ -17,7 +19,7 @@ public abstract class Person {
 		this.password = "toto";
 	}
 
-	public String getName() {
+	public String getname() {
 		return name;
 	}
 	public int getAge() {

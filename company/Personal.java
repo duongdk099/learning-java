@@ -1,3 +1,4 @@
+package company;
 
 public class Personal extends Person {
 
@@ -10,7 +11,7 @@ public class Personal extends Person {
 	private String password;
 	private int right;
 	private Flight flight; 
-	// Personal create Flight
+	// company.Personal create company.Flight
 	public void createFlight(Flight newFlight) {
 		if (newFlight != null) {
 			this.setFl(newFlight);
@@ -29,11 +30,11 @@ public class Personal extends Person {
 	{
 		return p == this.password;
 	}
-	// get Flight
+	// get company.Flight
 	public Flight getFl() {
 		return flight;
 	}
-	// set Flight
+	// set company.Flight
 	public void setFl(Flight flight) {
 		this.flight = flight;
 	}

@@ -1,14 +1,19 @@
+package company;
+
 import java.time.LocalDateTime;
-import java.util.Calendar;
 
 public class Booking {
 
-    private Flight flight; //Booking belong to Flight
+    private Flight flight; //company.Booking belong to company.Flight
     private String seat;
 
     public Booking (Flight flight, String seat) {
         this.flight = flight;
         this.seat = seat;
+    }
+
+    public Booking(Flight flight) {
+        this(flight, "A12");
     }
 
     public void setFlight(Flight flight) {
