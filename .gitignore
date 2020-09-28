@@ -1,2 +1,5 @@
 bin
 bin/*
+/learning-java.iml
+.idea
+.idea/*

@@ -6,7 +6,6 @@ public class Personal extends Person {
 		// TODO Auto-generated constructor stub
 	}
 
-	private int id;
 	private String pseudo;
 	private String password;
 	private int right;

@@ -1,17 +1,27 @@
-import java.util.Calendar;
+import java.time.Duration;
+import java.time.LocalDateTime;
+import java.time.Period;
+import java.time.temporal.TemporalAmount;
+
 public class Flight{
 
     private int id;
+
     private String company;
-    // Create the full date for the flight
-    Calendar flightTime = Calendar.getInstance();
-    //flightTime.set(2020, 02, 30, 12, 30, 30);
+
+    private boolean status;
+
+    private TemporalAmount duration; // mins
+
+    private LocalDateTime departureTime;
      
     // Constructor the class Flight
-    public Flight(int id, String nameCompany, Calendar dateFlightCalendar ){
+    public Flight(int id, String nameCompany, LocalDateTime departureTime, TemporalAmount duration){
         this.id = id;
         this.company = nameCompany;
-        this.flightTime= dateFlightCalendar;
+        this.departureTime= departureTime;
+        this.duration = duration;
+        this.status = true;
     }
 
     // Get the Id
@@ -19,20 +29,31 @@ public class Flight{
         return this.id;
     }
 
-    // Set the Date
-    public Calendar setDateCalendar( Calendar a ){
-        return this.flightTime = a;
-    }    
-
     // Cancel the reservation
     public void cancel()
     {
-        System.out.println("Your reservation is canceled");
+        status = false;
     }
 
-    // get arrival time
-    public Calendar getArrival(){
-        return this.flightTime;
-        // em chua tim duoc cach cong a
+    /**
+     * get arrival time, a copy instance of time
+     * arrival = departure + duration
+     * @return LocalDateTime
+     */
+    public LocalDateTime getArrivalTime(){
+        return this.departureTime.plus(this.duration);
     }
+
+    public static void main(String[] args) {
+
+        String time_string = "2019-12-31T19:15:30";
+
+        Flight flight = new Flight(1,
+                "Airfrance",
+                LocalDateTime.parse(time_string),
+                Duration.ofHours(3));
+
+        System.out.println(flight);
+    }
+
 }

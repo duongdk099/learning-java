@@ -5,16 +5,16 @@ import java.util.List;
 public class Customer extends Person {
 
 	private static String addresse;
-	private int id;
 	private String mail;
 	private String password;
 	private List<String> bookings;
+
 	// Customer can book from booking
 	private Booking bk;
+
 	// still sai
 	public void book(Booking cusBooking) {
-		if(cusBooking != null)
-		{
+		if(cusBooking != null)  {
 			this.bk = cusBooking;
 		}
 	}
@@ -47,11 +47,7 @@ public class Customer extends Person {
 	}
 
 	public boolean isPasswordCorrect(String p) {
-		if (this.password == p)
-			return true;
-			return false;
+		return this.password == p;
 	}
-
-	//set Flight
 	
 }
