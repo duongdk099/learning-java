@@ -10,13 +10,14 @@ public abstract class Person {
 	private String name;
 	private int age;
 	private String adress;
-	private String password;
+	protected String password;
 
-	public Person(String name, int age, String address)  {
+	public Person(String name, int age, String address, int id, String password)  {
 		this.name = name;
+		this.id = id;
 		this.age = age;
 		this.adress = address;
-		this.password = "toto";
+		this.password = password;
 	}
 
 	public String getname() {
@@ -29,8 +30,10 @@ public abstract class Person {
 		return this.age > person.age;
 	}
 
-	private void setPassword(String password) {
+	public void setPassword(String password) {
 		this.password = password;
 	}
-
+	public boolean isPasswordCorrect (String p){
+		return this.password == p;
+	}
 }

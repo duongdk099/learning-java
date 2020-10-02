@@ -6,9 +6,7 @@ import java.util.List;
 
 public class Customer extends Person {
 
-	private static String addresse;
-	private String mail;
-	private String password;
+	private String mail;	
 	private List<String> bookings;
 
 	// company.Customer can book from booking
@@ -21,15 +19,16 @@ public class Customer extends Person {
 		}
 	}
 	
-	public Customer( String name,  int age,  String address) {
-		super(name, age, addresse);
+	public Customer( String name,  int age,  String adress, int id, String password, String mail, List<String> bookings) {
+		super(name, age, adress, id, password);
+		this.mail = mail;
 		this.bookings = new ArrayList<String>();
 	}
 
-	public Customer() {
+	/*public Customer() {
 		super("admin", 100, "admin");
 		this.bookings = new LinkedList<String>();
-	}
+	}*/
 
 	public String getMail() {
 		return mail;
@@ -49,7 +48,7 @@ public class Customer extends Person {
 	}
 
 	public boolean isPasswordCorrect(String p) {
-		return this.password == p;
+		return 	this.password == p;
 	}
 	
 }

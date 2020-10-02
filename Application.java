@@ -1,10 +1,6 @@
 import java.util.Scanner;
-
 public class Application {
-
-
     public static void main(String[] args) {
-
         System.out.println("Launched application...");
 
         Company company = new Company();
@@ -20,9 +16,7 @@ public class Application {
 
         while(!stop) {
 
-
-
-            System.out.println("Choose from menu: 1> ... 2> ...");
+            System.out.println("Choose from menu: 1> Customer \n2> Personal \n0> Exit");
             Scanner sc = new Scanner(System.in);
             int userChoice = sc.nextInt();
 
@@ -39,8 +33,6 @@ public class Application {
             }
 
         }
-
         System.out.println("Application is shutting down!");
-
     }
 }
