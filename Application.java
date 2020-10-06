@@ -27,11 +27,11 @@ public class Application {
                 case 2:
                     // company.createFlight();
                     break;
-                case 0:
+                default:
                     stop = true;
                     break;
             }
-
+            break;
         }
         System.out.println("Application is shutting down!");
     }

@@ -4,6 +4,7 @@ public class Personal extends Person {
 
 	
 
+	
 	private String pseudo;
 	private int right;
 	private Flight flight; 
@@ -11,7 +12,7 @@ public class Personal extends Person {
 
 
 
-	public Personnal(String name, int age, String adress, int id, String password, String pseudo, int right, Flight flight) {
+	public Personal(String name, int age, String adress, int id, String password, String pseudo, int right, Flight flight) {
 		super(name, age, adress, id, password);
 		this.pseudo = pseudo;
 		this.right = right;
@@ -20,7 +21,7 @@ public class Personal extends Person {
 
 	public void createFlight(Flight newFlight) {
 		if (newFlight != null) {
-			this.setFl(newFlight);
+			this.setFlight(newFlight);
 		}
 	}
 	public boolean hasRight(int r)
@@ -41,7 +42,7 @@ public class Personal extends Person {
 		return flight;
 	}
 	// set company.Flight
-	public void setFl(Flight flight) {
+	public void setFlight(Flight flight) {
 		this.flight = flight;
 	}
 }

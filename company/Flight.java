@@ -2,12 +2,15 @@ package company;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
+//import java.time.LocalTime;
 import java.time.temporal.TemporalAmount;
+import java.util.List;
+import java.util.Map;
 
 public class Flight{
 
     private int id;
+    Map<Integer , List<String>> fullFlight;// Hashmap for Flight
 
     private String departureCity;
 
@@ -15,21 +18,31 @@ public class Flight{
 
     private String company;
 
-    private boolean status;
-
     private TemporalAmount duration; // mins
 
     private LocalDateTime departureTime;
-     
+    
+    private int nbrSeat;
+    
+    private int price;
+    
+    public Map<Integer , List<String>> getFullFlight(){
+    	return this.fullFlight;
+    }
+    
     // Constructor the class company.Flight
-    public Flight(int id, String departureCity, String arrivalCity ,String nameCompany, LocalDateTime departureTime, TemporalAmount duration){
+    public Flight(int id, String departureCity, String arrivalCity ,String nameCompany, 
+    		LocalDateTime departureTime, TemporalAmount duration,
+    		int nbrSeat, int priceTicket){
         this.id = id;
         this.departureCity = departureCity;
         this.arrivalCity = arrivalCity;
         this.company = nameCompany;
         this.departureTime= departureTime;
         this.duration = duration;  
-        this.status = true;
+        this.nbrSeat = nbrSeat;
+        this.price = priceTicket;
+        
     }
     // Get the Flight
     public void getFlight(){
@@ -38,18 +51,14 @@ public class Flight{
         + "\narrival City : " + this.arrivalCity
         + "\ncompany : " + this.company 
         + "\nDeparture time : "+ this.departureTime
-        + "\nduration of this trip : " + this.duration);
+        + "\nduration of this trip : " + this.duration
+        + "\nthe amount of seat availble : "+ this.nbrSeat
+        + "\nthe price of the ticket : "+ this.price);
     }
 
     // Get the Id
     public int getId(){
         return this.id;
-    }
-
-    // Cancel the reservation
-    public void cancel()
-    {
-        status = false;
     }
 
     //Change the city of departure 
@@ -61,7 +70,14 @@ public class Flight{
     public  void changerArrivalCity (String newArrivalCity){
         this.arrivalCity = newArrivalCity;
     }
-
+    // change the number of the seat available
+    public void changeNbrSeat(int newNbrSeat) {
+    	this.nbrSeat = newNbrSeat;
+    }
+    // change the price of the ticket
+    public void changePriceTicket(int newPrice) {
+    	this.price = newPrice;
+    }
     /**
      * get arrival time, a copy instance of time
      * arrival = departure + duration
@@ -80,26 +96,38 @@ public class Flight{
                 "Los Angela",
                 "Airfrance",
                 LocalDateTime.parse(time_string),
-                Duration.ofMinutes(30)
-                );
+                Duration.ofMinutes(30),
+                50,
+                300);
         
         String crazy_fling_timeing = "2020-06-30T12:30:45";
+        
         Flight flight2 = new Flight(2,
         "Singapore",
         "Hanoi", 
         "Freefly", 
         LocalDateTime.parse(crazy_fling_timeing), 
-        Duration.ofHours(5)
-        );
+        Duration.ofHours(5),
+        100,
+        150);
+        
+        
         System.out.print("First Flight\n");
         flight.getFlight();
+        
+        
         System.out.print("\nSecond Flight\n");
         flight2.getFlight();
 
         flight.changerArrivalCity("LA");
         flight.changerDepatureCity("HAN");
+        flight.changeNbrSeat(1000);
+        flight.changePriceTicket(100);
+        
+        
         System.out.print("First Flight\n");
         flight.getFlight();
+        
         System.out.print("\nSecond Flight\n");
         flight2.getFlight();
     }
